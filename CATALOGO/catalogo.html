@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Ropa | HEAVY</title>
+    <!-- Fuente Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Iconos FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #111111;
+            --accent-color: #25D366; /* Color WhatsApp */
+            --bg-light: #F9F9F9;
+            --text-color: #333333;
+            --gray-border: #E0E0E0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-color);
+        }
+
+        /* Banner Superior */
+        .top-banner {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 8px 15px;
+            font-size: 13px;
+            font-weight: 400;
+        }
+
+        /* Header */
+        header {
+            background-color: white;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid var(--gray-border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        header h1 {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        header p {
+            font-size: 13px;
+            color: #666;
+            margin-top: 3px;
+        }
+
+        /* Hero / Portada */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+            margin-bottom: 30px;
+        }
+
+        .hero h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .hero p {
+            font-size: 15px;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .whatsapp-hero-btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            transition: background 0.3s;
+        }
+
+        .whatsapp-hero-btn:hover {
+            background-color: #1ebe57;
+        }
+
+        /* Contenedor Principal */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 15px 40px 15px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Grilla de Productos */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 340px;
+            object-fit: cover;
+            background-color: #eee;
+        }
+
+        .product-info {
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            flex-grow: 1;
+        }
+
+        .product-name {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .product-sizes {
+            font-size: 12px;
+            color: #777;
+            font-weight: 500;
+        }
+
+        .product-price {
+            font-size: 18px;
+            font-weight: 700;
+            color: #111;
+        }
+
+        .btn-buy {
+            display: block;
+            width: 100%;
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            transition: background 0.2s;
+            margin-top: 10px;
+        }
+
+        .btn-buy:hover {
+            background-color: var(--accent-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 40px;
+            font-size: 13px;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+            color: #aaa;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 20px;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Banner Superior -->
+    <div class="top-banner">
+        🔥 Nuevos ingresos | Envíos a todo el país 🚚
+    </div>
+
+    <!-- Header -->
+    <header>
+        <h1>HEAVY</h1>
+        <p>project. | est. 2026</p>
+    </header>
+
+    <!-- Portada -->
+    <section class="hero">
+        <h2>NUEVA COLECCIÓN</h2>
+        <p>Encontrá los mejores looks para renovar tu placard</p>
+        <a href="https://wa.me/5493624063807?text=Hola!%20Quiero%20hacerles%20una%20consulta%20sobre%20el%20catálogo" class="whatsapp-hero-btn" target="_blank">
+            <i class="fab fa-whatsapp"></i> Escribinos por WhatsApp
+        </a>
+    </section>
+
+    <!-- Catálogo -->
+    <div class="container">
+        <h3 class="section-title">Nuestros Productos</h3>
+
+        <div class="product-grid">
+            
+            <!-- Producto 1: Remera Collective Gris -->
+            <div class="product-card">
+                <img src="remeraCollectiveGris.jpg.webp" alt="Remera Collective Gris" class="product-image">
+                <div class="product-info">
+                    <h4 class="product-name">Remera Collective Gris</h4>
+                    <span class="product-sizes">Talles: S - M - L - XL</span>
+                    <span class="product-price">$ 40.000</span>
+                    <a href="https://wa.me/5493624063807?text=Hola!%20Me%20interesa%20la%20Remera%20Collective%20Gris" class="btn-buy" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Consultar / Comprar
+                    </a>
+                </div>
+            </div>
+
+            <!-- Producto 2: Remera Collective Negro -->
+            <div class="product-card">
+                <img src="remeraCollectiveNegro.jpg.webp" alt="Remera Collective Negro" class="product-image">
+                <div class="product-info">
+                    <h4 class="product-name">Remera Collective Negro</h4>
+                    <span class="product-sizes">Talles: S - M - L - XL</span>
+                    <span class="product-price">$ 40.000</span>
+                    <a href="https://wa.me/5493624063807?text=Hola!%20Me%20interesa%20la%20Remera%20Collective%20Negro" class="btn-buy" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Consultar / Comprar
+                    </a>
+                </div>
+            </div>
+
+            <!-- Producto 3: Remera Jeep Celeste -->
+            <div class="product-card">
+                <img src="remeraJeepCeleste.jpg.webp" alt="Remera Jeep Celeste" class="product-image">
+                <div class="product-info">
+                    <h4 class="product-name">Remera Jeep Celeste</h4>
+                    <span class="product-sizes">Talles: S - M - L - XL</span>
+                    <span class="product-price">$ 35.000</span>
+                    <a href="https://wa.me/5493624063807?text=Hola!%20Me%20interesa%20la%20Remera%20Jeep%20Celeste" class="btn-buy" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Consultar / Comprar
+                    </a>
+                </div>
+            </div>
+
+            <!-- Producto 4: Remera Micropanal Negro -->
+            <div class="product-card">
+                <img src="remeraMicroPanalNegra.jpg" alt="Remera Micropanal Negro" class="product-image">
+                <div class="product-info">
+                    <h4 class="product-name">Remera Micropanal Negro</h4>
+                    <span class="product-sizes">Talles: S - M - L - XL - XLL</span>
+                    <span class="product-price">$ 35.000</span>
+                    <a href="https://wa.me/5493624063807?text=Hola!%20Me%20interesa%20la%20Remera%20MicroPanal%20Negro" class="btn-buy" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Consultar / Comprar
+                    </a>
+                </div>
+            </div>
+
+            <!-- Producto 5: Remera Micropanal Blanco -->
+            <div class="product-card">
+                <img src="remeraMicroPanalBlanco.jpg" alt="Remera Micropanal Blanco" class="product-image">
+                <div class="product-info">
+                    <h4 class="product-name">Remera Micropanal Blanco</h4>
+                    <span class="product-sizes">Talles: S - M - L - XL</span>
+                    <span class="product-price">$ 35.000</span>
+                    <a href="https://wa.me/5493624063807?text=Hola!%20Me%20interesa%20la%20Remera%20MicroPanal%20Blanco" class="btn-buy" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Consultar / Comprar
+                    </a>
+                </div>
+            </div>
+
+            <!-- Producto 6: Bermuda Baggy Flim Negro -->
+            <div class="product-card">
+                <img src="bermudaBaggyFlimNegro.jpg.webp" alt="Bermuda Baggy Flim Negro" class="product-image">
+                <div class="product-info">
+                    <h4 class="product-name">Bermuda Baggy Flim Negro</h4>
+                    <span class="product-sizes">Talles: 38 - 40 - 42 - 44 - 46</span>
+                    <span class="product-price">$ 55.000</span>
+                    <a href="https://wa.me/5493624063807?text=Hola!%20Me%20interesa%20la%20Bermuda%20Baggy%20Flim%20Negro" class="btn-buy" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Consultar / Comprar
+                    </a>
+                </div>
+            </div>
+
+            <!-- Producto 7: Bermuda Baggy Lollo Matizada -->
+            <div class="product-card">
+                <img src="bermudaBaggyLolloMatizada.webp" alt="Bermuda Baggy Lollo Matizada" class="product-image">
+                <div class="product-info">
+                    <h4 class="product-name">Bermuda Baggy Lollo Matizada</h4>
+                    <span class="product-sizes">Talles: 38 - 40 - 42 - 44 - 46</span>
+                    <span class="product-price">$ 60.000</span>
+                    <a href="https://wa.me/5493624063807?text=Hola!%20Me%20interesa%20la%20Bermuda%20Baggy%20Lollo%20Matizada" class="btn-buy" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Consultar / Comprar
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Seguinos en nuestras redes</p>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/heavy.project/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@heavy.project_?lang=es" target="_blank"><i class="fab fa-tiktok"></i></a>
+        </div>
+        <p style="margin-top: 15px; font-size: 11px; color: #777;">© 2026 HEAVY.</p>
+    </footer>
+
+</body>
+</html>
